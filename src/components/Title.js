@@ -1,9 +1,6 @@
 // @app
 import React from 'react';
-import {
-    Text,
-    TouchableOpacity
-} from 'react-native';
+import { Text } from 'react-native';
 import { styles } from './style';
 
 const Title = ({ title, type, color, weight }) => {

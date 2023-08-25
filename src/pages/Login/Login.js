@@ -20,7 +20,6 @@ import Icon from 'react-native-vector-icons/EvilIcons';
 
 import Title from '../../components/Title';
 import Colors from '../../styles/Colors';
-import OutlinedTextInput from './Components/OutlinedTextInput';
 import Button from '../../components/Button';
 import { styles } from './styles';
 import { handleLogin } from './Components/CallBack';
