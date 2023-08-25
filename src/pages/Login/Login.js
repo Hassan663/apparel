@@ -39,86 +39,19 @@ const Login = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        {/* <Image
-          style={styles.loginIcon}
-          source={require("../../assets/SplashIcon2.png")} /> */}
-        <View style={{ height: heightFlex1 * 3, backgroundColor: 'red' }}>
-          <View style={styles.circle2(35)}></View>
+        <View style={{ height: heightFlex1 * 2.3, marginTop: RFPercentage(5), alignItems: 'center' }}>
+          <View style={[styles.circle2(60),]}>
+            <Title title={'A'} weight={'600'} color={Colors.white} type={'Poppin-38'} />
+          </View>
         </View>
-        <Title
-          title={`Hey, Login Now.`}
-          color={Colors.black}
-          weight={'600'}
-          type={'Poppin-20'} />
-        <View style={styles.subHeading}>
-          <Title
-            title={`Lorem ipsum dolor sit consectetur  elit.`}
-            color={Colors.gray}
-            weight={'400'}
-            type={'Poppin-16'} />
+        <View style={{ alignSelf: "center" }}>
+          <Title title={'Login to apparel'} weight={'500'} color={Colors.black} type={'Poppin-20'} />
         </View>
+        <View style={{
+          height: RFPercentage(8), width: "100%", borderRadius: RFPercentage(2), backgroundColor: Colors.white,
+          flexDirection: 'row',
+        }}>
 
-        <OutlinedTextInput
-          val={email}
-          onChange={(val) => {
-            console.log(val, 'dasad')
-            setEmail(val)
-          }}
-          title={'Email'} />
-        <OutlinedTextInput
-          val={password}
-          onChange={(val) => { setPassword(val) }}
-          title={'Password'}
-          Password />
-
-        <TouchableOpacity activeOpacity={.8}
-          onPress={() => navigation.navigate('ForgetPass')}
-          style={styles.selfEnd}>
-          <Title
-            title={`Forgot Password`}
-            color={Colors.red}
-            weight={'400'}
-            type={'Poppin-14'} />
-        </TouchableOpacity>
-
-        <View style={styles.btnWrapper}>
-          <Button callBack={() => handleLogin(email, password, navigation)} title={'Sign In'} primary />
-        </View>
-
-        <View style={styles.rowWrapper}>
-          <Title
-            title={`Don’t have account. `}
-            color={Colors.gray}
-            weight={'400'}
-            type={'Poppin-14'} />
-          <TouchableOpacity
-            activeOpacity={.8}
-            onPress={() => navigation.navigate('Signup')}>
-            <Title
-              title={`Sign up`}
-              color={Colors.primary}
-              weight={'600'}
-              type={'Poppin-14'} />
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.rowWrapper}>
-          <Title
-            title={`Or Sign in with social media`}
-            color={Colors.gray}
-            weight={'400'}
-            type={'Poppin-14'} />
-        </View>
-
-        <View style={styles.rowWrapper}>
-          <TouchableOpacity style={styles.circle}>
-            <EvilIcons name={`sc-facebook`} size={RFPercentage(3.2)} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            // onPress={GoogleSignIn}
-            style={styles.circle}>
-            <AntDesign name={`google`} size={RFPercentage(2)} />
-          </TouchableOpacity>
         </View>
 
       </ScrollView>
