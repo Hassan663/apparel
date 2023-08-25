@@ -3,7 +3,6 @@ import React, {
   useState
 } from 'react';
 import {
-  Image,
   ScrollView,
   View,
   SafeAreaView,
@@ -11,7 +10,6 @@ import {
 } from 'react-native';
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
 import Title from '../../components/Title';
@@ -46,10 +44,6 @@ const Signup = ({ navigation }) => {
             weight={'600'}
             type={'Poppin-16'} />
         </TouchableOpacity>
-        {/* <Image
-          style={styles.loginIcon}
-          source={require("../../assets/SplashIcon2.png")} /> */}
-
         <Title
           title={`Create your account.`}
           color={Colors.black}

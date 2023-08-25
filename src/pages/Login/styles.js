@@ -1,7 +1,10 @@
+import { Dimensions } from 'react-native';
 import { StyleSheet } from 'react-native';
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import Colors from '../../styles/Colors';
 
+const windowHeight = Dimensions.get('window').height;
+const heightFlex1 = windowHeight / 10
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -22,6 +25,10 @@ export const styles = StyleSheet.create({
         fontWeight: "600",
         height: "100%",
         paddingHorizontal: RFPercentage(1)
+    },
+    inputSection: {
+        height: heightFlex1 * 2.6,
+        justifyContent: 'center',
     },
     inputContainer: {
         height: RFPercentage(8),
@@ -51,5 +58,31 @@ export const styles = StyleSheet.create({
         zIndex: 1,
         bottom: RFPercentage(2),
     },
-
+    logoContainer: {
+        height: heightFlex1 * 2,
+        marginTop: RFPercentage(5),
+        alignItems: 'center'
+    },
+    scrollContainer: {
+        height: heightFlex1 * 10,
+    },
+    hrLine: {
+        width: '45%',
+        backgroundColor: Colors.fontColor,
+        height: 1
+    },
+    socialIconContainer: {
+        flexDirection: "row",
+        width: "45%",
+        alignSelf: 'center',
+        marginVertical: RFPercentage(2),
+        alignItems: "center",
+        justifyContent: "space-between"
+    },
+    hrLineSection: {
+        marginVertical: RFPercentage(.5),
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between"
+    },
 });

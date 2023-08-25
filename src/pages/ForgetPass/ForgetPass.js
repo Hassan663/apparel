@@ -40,9 +40,6 @@ const ForgetPass = ({ navigation }) => {
             weight={'600'}
             type={'Poppin-16'} />
         </TouchableOpacity>
-        {/* <Image
-          style={styles.loginIcon}
-          source={require("../../assets/SplashIcon2.png")} /> */}
 
         <Title
           title={`Reset your password`}

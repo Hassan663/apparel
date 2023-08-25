@@ -4,13 +4,10 @@ import React, {
   useState
 } from 'react';
 import {
-  Image,
   ScrollView,
   View,
   SafeAreaView,
   TouchableOpacity,
-  Dimensions,
-  Text,
   TextInput
 } from 'react-native';
 
@@ -32,9 +29,7 @@ import { GoogleSignIn, } from '../../store/action/action';
 // GoogleSignin.configure({
 //   webClientId:
 //     '761704855538-olml0n1e8saf9vmukip0otic5291679s.apps.googleusercontent.com', // client ID of type WEB for your server (needed to verify user ID and offline access)
-// });
-const windowHeight = Dimensions.get('window').height;
-const heightFlex1 = windowHeight / 10
+// }); 
 const Login = ({ navigation }) => {
 
   const [email, setEmail] = useState('mynameismuzammilhussainshah@gmail.com');
@@ -42,20 +37,33 @@ const Login = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={{ height: heightFlex1 * 10, }}>
-        <View style={{ height: heightFlex1 * 2, marginTop: RFPercentage(5), alignItems: 'center' }}>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+
+        <View style={styles.logoContainer}>
           <View style={[styles.circle2(60),]}>
-            <Title title={'A'} weight={'600'} color={Colors.white} type={'Poppin-38'} />
+            <Title
+              title={'A'}
+              weight={'600'}
+              color={Colors.white}
+              type={'Poppin-38'} />
           </View>
         </View>
+
         <View style={styles.selfCenter}>
-          <Title title={'Login to apparel'} weight={'500'} color={Colors.black} type={'Poppin-20'} />
+          <Title
+            title={'Login to apparel'}
+            weight={'500'}
+            color={Colors.black}
+            type={'Poppin-20'} />
         </View>
-        <View style={{ height: heightFlex1 * 2.6, justifyContent: 'center', }}>
+
+        <View style={styles.inputSection}>
           <View style={styles.inputContainer}>
+
             <View style={styles.inputIcon}>
               <Icon name={`user`} color={Colors.fontColor} size={RFPercentage(5)} />
             </View>
+
             <TextInput
               value={email}
               onChangeText={(text) => setEmail(text)}
@@ -63,7 +71,9 @@ const Login = ({ navigation }) => {
               placeholder='user name'
               style={styles.inputStyle} />
           </View>
+
           <View style={styles.inputContainer}>
+
             <View style={styles.inputIcon}>
               <Feather
                 name={`lock`}
@@ -71,6 +81,7 @@ const Login = ({ navigation }) => {
                 size={RFPercentage(3.5)} />
 
             </View>
+
             <TextInput
               value={password}
               secureTextEntry={true}
@@ -79,37 +90,42 @@ const Login = ({ navigation }) => {
               placeholder='Password'
               style={styles.inputStyle} />
           </View>
-          <TouchableOpacity activeOpacity={0.8}
-            onPress={() => navigation.navigate('ForgetPass')} style={styles.selfCenter}>
-            <Title title={'Forgot Password?'} weight={'500'} color={Colors.black} type={'Poppin-14'} />
+
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={() => navigation.navigate('ForgetPass')}
+            style={styles.selfCenter}>
+            <Title
+              title={'Forgot Password?'}
+              weight={'500'}
+              color={Colors.black}
+              type={'Poppin-14'} />
           </TouchableOpacity>
+
         </View>
         <View style={styles.btnWrapper}>
+
           <Button
             //  callBack={() => handleLogin(email, password, navigation)}
             title={'Login'} primary />
         </View>
-        <View style={{
-          marginVertical: RFPercentage(.5),
-          flexDirection: "row",
-          alignItems: "center", justifyContent: "space-between"
-        }}>
-          <View style={{ width: '45%', backgroundColor: Colors.fontColor, height: 1 }} />
-          <Title title={'Or'} weight={'500'} color={Colors.fontColor} type={'Poppin-14'} />
-          <View style={{ width: '45%', backgroundColor: Colors.fontColor, height: 1 }} />
+        <View style={styles.hrLineSection}>
+          <View style={styles.hrLine} />
+          <Title
+            title={'Or'}
+            weight={'500'}
+            color={Colors.fontColor}
+            type={'Poppin-14'} />
+          <View style={styles.hrLine} />
         </View>
-        <View style={{
-          flexDirection: "row", width: "45%", alignSelf: 'center',
-          marginVertical: RFPercentage(2),
-          alignItems: "center", justifyContent: "space-between"
-        }}>
-          <View style={[styles.circle2(36, Colors.fbBlue),]}>
+        <View style={styles.socialIconContainer}>
+          <View style={styles.circle2(36, Colors.fbBlue)}>
             <EvilIcons name={`sc-facebook`} color={Colors.white} size={RFPercentage(4)} />
           </View>
-          <View style={[styles.circle2(36, Colors.red),]}>
+          <View style={styles.circle2(36, Colors.red)}>
             <AntDesign name={`googleplus`} color={Colors.white} size={RFPercentage(4)} />
           </View>
-          <View style={[styles.circle2(36, Colors.black),]}>
+          <View style={styles.circle2(36, Colors.black)}>
             <AntDesign name={`apple1`} color={Colors.white} size={RFPercentage(3.5)} />
           </View>
         </View>
