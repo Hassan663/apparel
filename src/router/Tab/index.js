@@ -6,6 +6,7 @@ import {
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Splash from '../../pages/Splash/Splash';
+import Login from '../../pages/Login/Login';
 export default function Navigation() {
   return (
     <NavigationContainer>
@@ -23,6 +24,7 @@ function RootNavigator() {
     <Stack.Navigator
       screenOptions={{ headerShown: false }}
     >
+      <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Splash" component={Splash} />
       {/* <Stack.Screen name="WalkThrough" component={WalkThrough} />
       <Stack.Screen name="Signup" component={Signup} />

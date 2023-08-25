@@ -7,19 +7,18 @@ import {
 
 import { styles } from './styles';
 import { useEffect } from 'react';
+import Title from '../../components/Title';
+import Colors from '../../styles/Colors';
 
 const Splash = ({ navigation }) => {
-  useEffect(() => {
-    setTimeout(() => {
-      navigation.navigate('WalkThrough')
-    }, 1000);
-  }, [])
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     navigation.navigate('Login')
+  //   }, 1000);
+  // }, [])
   return (
     <View style={styles.container}>
-      {/* <Image
-        style={styles.splash_Icon}
-        resizeMode='contain'
-        source={require('../../assets/SplashIcon2.png')} /> */}
+      <Title title={'Apparel'} weight={'600'} color={Colors.white} type={'Poppin-42'} />
     </View >
   );
 };

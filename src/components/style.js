@@ -29,6 +29,9 @@ export const styles = StyleSheet.create({
     poppin_18: {
         fontSize: 18,
     },
+    poppin_42: {
+        fontSize: 42,
+    },
     primaryBtn: {
         flex: 1,
         backgroundColor: Colors.primary,
