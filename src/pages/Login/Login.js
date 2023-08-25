@@ -79,9 +79,10 @@ const Login = ({ navigation }) => {
               placeholder='Password'
               style={styles.inputStyle} />
           </View>
-          <View style={styles.selfCenter}>
+          <TouchableOpacity activeOpacity={0.8}
+            onPress={() => navigation.navigate('ForgetPass')} style={styles.selfCenter}>
             <Title title={'Forgot Password?'} weight={'500'} color={Colors.black} type={'Poppin-14'} />
-          </View>
+          </TouchableOpacity>
         </View>
         <View style={styles.btnWrapper}>
           <Button

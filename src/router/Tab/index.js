@@ -7,6 +7,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Splash from '../../pages/Splash/Splash';
 import Login from '../../pages/Login/Login';
+import Signup from '../../pages/Signup/Signup';
+import ForgetPass from '../../pages/ForgetPass/ForgetPass';
 export default function Navigation() {
   return (
     <NavigationContainer>
@@ -25,6 +27,8 @@ function RootNavigator() {
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="ForgetPass" component={ForgetPass} />
+      <Stack.Screen name="Signup" component={Signup} />
       <Stack.Screen name="Splash" component={Splash} />
       {/* <Stack.Screen name="WalkThrough" component={WalkThrough} />
       <Stack.Screen name="Signup" component={Signup} />
