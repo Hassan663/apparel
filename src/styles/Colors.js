@@ -1,6 +1,7 @@
 const Colors = {
     black: "#040415",
     primary: '#32A99A',
+    tabInActive: '#CCCCCC',
     fbBlue: '#3B5999',
     red: '#FC3637',
     // yellow: '#FFAB07',
