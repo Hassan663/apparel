@@ -105,7 +105,7 @@ const Login = ({ navigation }) => {
         <View style={styles.btnWrapper}>
 
           <Button
-            //  callBack={() => handleLogin(email, password, navigation)}
+             callBack={() => handleLogin(email, password, navigation)}
             title={'Login'} primary />
         </View>
         <View style={styles.hrLineSection}>

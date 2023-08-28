@@ -9,17 +9,6 @@ import { Alert } from "react-native";
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
 
-export const handleLogin = async (email, password, navigation) => {
-    try {
-        const userCredential = await auth().signInWithEmailAndPassword(email, password);
-        navigation.navigate('Home')
-        //  console.log(email, password);
-    } catch (error) {
-        Alert.alert('Login Error', 'Invalid email or password.');
-    }
-};
-
-
 export const validateEmail = (email) => {
     const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return pattern.test(email);
