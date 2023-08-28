@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import firestore from '@react-native-firebase/firestore';
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
 import Title from '../../components/Title';
@@ -111,6 +112,7 @@ const Signup = ({ navigation }) => {
 
         <View style={styles.btnWrapper}>
           <Button
+            // callBack={() => checkFirestore()}
             callBack={() => handleSignup(email, password, confirmPassword, firstName, lastName, navigation)}
             title={'Sign Up'}
             primary />
