@@ -11,12 +11,12 @@ export const styles = StyleSheet.create({
         backgroundColor: Colors.white,
         paddingHorizontal: RFPercentage(2)
     },
-    circle: (size) => ({
+    circle: (size, color) => ({
         height: size,
         justifyContent: 'center',
         alignItems: 'center',
         width: size,
-        backgroundColor: Colors.primary,
+        backgroundColor: color ? color : Colors.primary,
         borderRadius: size / 2
     }),
     headerContainer: {
@@ -27,56 +27,30 @@ export const styles = StyleSheet.create({
         justifyContent: "space-between",
         alignItems: 'center',
     },
-    inputContainer: {
-        height: "100%",
-        width: "80%",
-        backgroundColor: Colors.inputBg,
-        paddingHorizontal: RFPercentage(2),
-        borderRadius: RFPercentage(4),
-        flexDirection: 'row',
-        alignItems: "center",
-    },
-    searchContainer: {
-        flex: 1,
-        paddingHorizontal: RFPercentage(1),
-    },
-    filterContainer: {
-        height: "100%",
-        width: "20%",
-        justifyContent: "flex-end",
-        alignItems: "flex-end",
-    },
     bannerContainer: {
-        width: widthFlex1 * 8, backgroundColor: "red",
-        overflow: 'hidden',
-        height: '100%',
-        marginLeft: 20,
-        backgroundColor: Colors.inputBg,
-        borderRadius: RFPercentage(4)
+        margin: 1,
+        justifyContent: 'flex-end',
     },
     banner: {
-        position: "absolute",
         height: "100%",
         width: "100%"
     },
     bannerContentContainer: {
         paddingHorizontal: RFPercentage(3),
-        paddingVertical: RFPercentage(2),
+        paddingVertical: RFPercentage(3),
         justifyContent: "space-between",
-        height: "100%",
-        width: '100%'
-    },
-    getNowContainer: {
-        height: 30,
-        width: 80,
         backgroundColor: Colors.primary,
-        justifyContent: 'center',
-        alignItems: "center",
-        borderRadius: RFPercentage(3)
+        width: widthFlex1 * 8,
+        overflow: 'hidden',
+        height: '80%',
+        marginLeft: 19,
+        backgroundColor: Colors.primary,
+        borderRadius: RFPercentage(2)
     },
-    getNowTitle: {
-        color: Colors.white,
-        fontWeight: '700'
+    bellStyle: {
+        position: 'absolute',
+        zIndex: 1,
+        alignSelf: 'flex-end'
     },
     row: {
         width: '100%',
@@ -87,35 +61,14 @@ export const styles = StyleSheet.create({
     },
     cartContainer: {
         overflow: "hidden",
-        alignItems: 'center',
+        // alignItems: 'center',
         marginVertical: RFPercentage(1),
         width: '48%',
-    },
-    cartImg: {
-        height: 200,
-        borderRadius: RFPercentage(3),
-        marginBottom: 10,
-        backgroundColor: "white",
-        width: '98%',
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: 0.09,
-        shadowRadius: 4.65,
-
-        elevation: 7,
     },
     cartHeart: {
         position: "absolute",
         right: '8%',
         top: "5%"
     },
-    inputWrapper: {
-        height: 50,
-        width: "100%",
-        marginVertical: RFPercentage(2),
-        flexDirection: "row",
-    }
+
 });

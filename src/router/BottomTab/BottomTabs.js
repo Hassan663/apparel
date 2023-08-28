@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import { RFPercentage } from 'react-native-responsive-fontsize';
+
 import Entypo from 'react-native-vector-icons/Entypo'
 import Home from '../../pages/Home/Home';
 import MyCart from '../../pages/MyCart/MyCart';
 import Favorite from '../../pages/Favorite/Favorite';
 import Colors from '../../styles/Colors';
-import { RFPercentage } from 'react-native-responsive-fontsize';
 
 const Tab = createBottomTabNavigator();
 

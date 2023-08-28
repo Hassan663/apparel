@@ -10,7 +10,9 @@ import {
   Dimensions
 } from 'react-native';
 
-import AntDesign from 'react-native-vector-icons/AntDesign'
+import Feather from 'react-native-vector-icons/Feather'
+import Fontisto from 'react-native-vector-icons/Fontisto'
+import Entypo from 'react-native-vector-icons/Entypo'
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import firestore from '@react-native-firebase/firestore';
 
@@ -27,64 +29,58 @@ const windowWidth = Dimensions.get('window').width;
 const widthFlex1 = windowWidth / 10
 
 const Home = ({ navigation }) => {
-  // const dispatch = useDispatch()
-  // useEffect(() => {
-  //   // ADD JSON TO FIREBASE FIRESTORE
-  //   // {
-  //   //   const collectionRef = firestore().collection('New Arrivals');
-  //   //   Object.entries(data.categories).map(([key, v]) => {
-  //   //     console.log(key, v, 'key, v')
-  //   //     const customDocumentRef = collectionRef.doc(key);
-  //   //     customDocumentRef.set(v);
+  const dispatch = useDispatch()
+  useEffect(() => {
+    // ADD JSON TO FIREBASE FIRESTORE
+    // {
+    //   const collectionRef = firestore().collection('New Arrivals');
+    //   Object.entries(data.categories).map(([key, v]) => {
+    //     console.log(key, v, 'key, v')
+    //     const customDocumentRef = collectionRef.doc(key);
+    //     customDocumentRef.set(v);
 
-  //   //   })
-  //   // } 
-  //   // ADD JSON TO FIREBASE FIRESTORE
-  //   dispatch(getNewArrivals())
-  // }, [])
-  // const newArrivals = useSelector((state) => state.root.newArrivals);
-  // console.log(newArrivals, 'newArrivals')
+    //   })
+    // } 
+    // ADD JSON TO FIREBASE FIRESTORE
+    // dispatch(getNewArrivals())
+  }, [])
+
+  const recommended = useSelector((state) => state.root.recommended);
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
 
         {/* HEADER */}
         <View style={styles.headerContainer}>
-          <View style={styles.circle(36)}>
-            {/* <Image resizeMode='contain' source={require('../../assets/menu.png')} /> */}
-          </View>
-          <View style={styles.circle(50)}>
-            {/* <Image source={require('../../assets/userIcon.png')} /> */}
+          <Entypo name={`menu`} size={RFPercentage(4)} />
+
+          <Title title={`Apparel`} weight={'500'} color={Colors.black} type={`Poppin-18`} />
+          <View>
+            <View style={[styles.circle(10), styles.bellStyle]}>
+            </View>
+            <Fontisto name={`bell`} size={RFPercentage(3.5)} />
           </View>
         </View>
         {/* HEADER */}
 
-        {/* <Title
-          title={'Welcome,'}
-          color={Colors.primary}
-          weight={'600'}
-          type={`Poppin-25`} />
-        <Title
-          title={'Our Fashions App'}
-          color={Colors.fontColor}
-          weight={'600'}
-          type={`Poppin-20`} />
-
-        <View style={styles.inputWrapper}>
-          <View style={styles.inputContainer}>
-            <AntDesign name={`search1`} color={Colors.primary} size={RFPercentage(3)} />
-            <TextInput
-              placeholder='Search...'
-              style={styles.searchContainer} />
-          </View>
-          <View style={styles.filterContainer}>
-            <Image resizeMode='contain' source={require('../../assets/filtter.png')} />
-          </View>
+        <View style={{ height: RFPercentage(9), flexDirection: "row", alignItems: 'center', borderRadius: RFPercentage(2), backgroundColor: Colors.inputBg }}>
+          <Feather name={`search`} size={RFPercentage(3)} style={{ marginHorizontal: RFPercentage(2) }} />
+          {/* <View style={{ flex: 1, height: "100%", backgroundColor: 'red' }}></View> */}
+          <TextInput
+            placeholderTextColor={'#8C9199'}
+            placeholder='Search for tshirts, jeans, shorts, jackets'
+            style={{
+              flex: 1,
+              height: "100%",
+              fontSize: 14,
+              fontWeight: "500"
+            }}
+          />
         </View>
-
         <FlatList
           horizontal
-          contentContainerStyle={{ height: 160, }}
+          contentContainerStyle={{ height: 200, }}
           showsHorizontalScrollIndicator={false}
           snapToInterval={widthFlex1 * 8 + 20} // Width of each item + margin
           decelerationRate={'normal'} // Adjust as needed
@@ -94,28 +90,24 @@ const Home = ({ navigation }) => {
         />
         <View style={styles.row}>
           <Title
-            title={`New Arrivals`}
+            title={`Recommended`}
             weight={'700'}
-            color={Colors.primary}
+            color={Colors.black}
             type={'Poppin-18'} />
           <Title
-            title={`View All`}
+            title={`See all`}
             weight={'600'}
             color={Colors.fontColor}
             type={'Poppin-11'} />
         </View>
-        {newArrivals?.length > 0
-          &&
-          <FlatList
-            data={newArrivals}
-            numColumns={2}
-            contentContainerStyle={{ marginBottom: RFPercentage(10) }}
-            columnWrapperStyle={{ justifyContent: "space-between" }}
-            renderItem={({ item }) => <ArrivalCart item={item} navigation={navigation} />}
-            keyExtractor={(item, index) => index.toString()}
-          />
-        } */}
-
+        <FlatList
+          data={[0, 0, 0, 0, 0, 0, 0]}
+          numColumns={2}
+          contentContainerStyle={{ marginBottom: RFPercentage(10) }}
+          columnWrapperStyle={{ justifyContent: "space-between" }}
+          renderItem={({ item }) => <ArrivalCart item={item} navigation={navigation} />}
+          keyExtractor={(item, index) => index.toString()}
+        />
       </ScrollView>
     </SafeAreaView >
   );

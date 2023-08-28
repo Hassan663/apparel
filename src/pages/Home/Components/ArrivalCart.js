@@ -1,69 +1,48 @@
 // @app
-import React from 'react';
+import React, { useState } from 'react';
 import {
     View,
     Image,
     TouchableOpacity,
 } from 'react-native';
 
+import AntDesign from 'react-native-vector-icons/AntDesign'
+
 import Title from '../../../components/Title';
 import Colors from '../../../styles/Colors';
 import { styles } from '../styles';
+import { RFPercentage } from 'react-native-responsive-fontsize';
 
 export const ArrivalCart = ({ item, navigation, selectedProduct, category }) => {
-    if (category) {
-        var photoURL = item?.value?.photoURL
-        var name = item?.value?.name
-        var price = item?.value?.price
-        var keys = item.key
-        var selectedProductId = selectedProduct?.id
-    } else if (item?.data?.subcategories) {
-        var keys = Object.keys(item?.data?.subcategories);
-        if (keys.length > 0) {
-            const firstKey = keys[0];
-            const firstValue = item?.data?.subcategories[firstKey];
-            var photoURL = firstValue?.items[1]?.photoURL
-            var name = firstValue?.items[1]?.name
-            var price = firstValue?.items[1]?.price
-        }
-    }
+    const [isLiked, setIsLiked] = useState(false)
+
     return (
         <TouchableOpacity
             activeOpacity={.8}
-            onPress={() => {
-                if (navigation) {
-                    if (category) {
-                        navigation.navigate('ProductDetail', { item, selectedProductId })
-                    }
-                    else {
-                        navigation.navigate('Category', { item })
-                    }
-                }
-            }}
             style={styles.cartContainer}>
             <View style={styles.cartImg}>
-                <Image source={{ uri: photoURL }} style={styles.cartImg} resizeMode='contain' />
+                <Image source={require('../../../assets/item1.png')} style={styles.cartImg} resizeMode='contain' />
             </View>
-            <Image
-                source={require('../../../assets/arrivalItemHeart.png')}
-                resizeMode='contain'
-                style={styles.cartHeart}
-            />
+            <TouchableOpacity
+                onPress={() => setIsLiked(!isLiked)}
+                activeOpacity={0.8}
+                style={[styles.circle(RFPercentage(4), Colors.white), styles.cartHeart]}>
+                {isLiked ?
+                    <AntDesign name={`heart`} color={Colors.primary} size={RFPercentage(2)} />
+                    :
+                    <AntDesign name={`hearto`} color={Colors.primary} size={RFPercentage(2)} />
+                }
+            </TouchableOpacity>
             <Title
-                title={name}
+                title={`Olive Zip-Front Jacket`}
                 weight={'600'}
-                color={Colors.primary}
+                color={Colors.black}
                 type={'Poppin-14'} />
             <Title
-                title={category ? keys : keys && keys[0]}
+                title={`Rs. 3,999`}
                 weight={'400'}
                 color={Colors.fontColor}
                 type={'Poppin-11'} />
-            <Title
-                title={`$${price}`}
-                weight={'600'}
-                color={Colors.primary}
-                type={'Poppin-14'} />
         </TouchableOpacity>
     );
 }; 
