@@ -61,7 +61,6 @@ export const styles = StyleSheet.create({
     },
     cartContainer: {
         overflow: "hidden",
-        // alignItems: 'center',
         marginVertical: RFPercentage(1),
         width: '48%',
     },
@@ -70,5 +69,44 @@ export const styles = StyleSheet.create({
         right: '8%',
         top: "5%"
     },
-
+    bannerAbsImg: {
+        position: "absolute",
+        height: '100%',
+        left: '10%',
+        width: '100%',
+        top: 0, zIndex: 2,
+        alignSelf: 'center'
+    },
+    fullScreenCartContainer: {
+        height: 230,
+        borderRadius: RFPercentage(2),
+        marginVertical: RFPercentage(2)
+    },
+    fullScreenItemImg: {
+        height: "100%",
+        width: '100%',
+        resizeMode: "cover",
+        borderRadius: RFPercentage(3)
+    },
+    productDetailContainer: {
+        height: RFPercentage(10),
+        flexDirection: 'row'
+    },
+    plusIcon: {
+        margin: RFPercentage(1),
+        color: Colors.black
+    },
+    inputContainer: {
+        height: RFPercentage(9),
+        flexDirection: "row",
+        alignItems: 'center',
+        borderRadius: RFPercentage(2),
+        backgroundColor: Colors.inputBg
+    },
+    searchInput: {
+        flex: 1,
+        height: "100%",
+        fontSize: 14,
+        fontWeight: "500"
+    },
 });

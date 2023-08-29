@@ -13,7 +13,7 @@ import Colors from '../../../styles/Colors';
 import { styles } from '../styles';
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
-export const ArrivalCart = ({ item, navigation, selectedProduct, category }) => {
+export const ArrivalCart = ({ }) => {
     const [isLiked, setIsLiked] = useState(false)
 
     return (
